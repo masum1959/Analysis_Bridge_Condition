@@ -71,7 +71,7 @@ print("--- %s seconds ---" % execution_time)
 print("accuracy of the model: ", accuracy)
 
 # write scores to a file 
-with open("metricsc.txt", 'w') as outfile: 
+with open("metrics.txt", 'w') as outfile: 
     outfile.write("execution_time: %2.2f \n" % execution_time)
     outfile.write("accuracy: %2.2f%%" %accuracy)
 
