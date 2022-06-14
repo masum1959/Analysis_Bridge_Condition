@@ -26,5 +26,5 @@ jobs:
         run: |
           # Post reports as comments in GitHub PRs
           echo "## Model metrics" > report.md
-          cat matrics.txt >> report.md
+          cat metrics.txt >> report.md
           cml send-comment report.md
