@@ -81,9 +81,9 @@ print("accuracy of the LR model: ", accuracy_LR)
 # write scores to a file 
 with open("metrics.txt", 'w') as outfile:
     outfile.write("execution_time: %2.2f \n" % execution_time)
-    outfile.write("accuracy: %2.2f%%" % accuracy_RF)
-
-# write scores to a file
-with open("metrics.txt", 'w') as outfile:
+    outfile.write("accuracy: %2.2f%% \n" % accuracy_RF)
     outfile.write("accuracy: %2.2f%%" % accuracy_LR)
+
+
+
 
