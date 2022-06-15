@@ -22,6 +22,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 import time
 from sklearn import metrics
 
@@ -65,13 +66,24 @@ start_time = time.time()
 clf = RandomForestClassifier(n_estimators=50)
 clf.fit(X_train, y_train)
 pred = clf.predict(X_test)
-accuracy = metrics.accuracy_score(y_test, pred)
+accuracy_RF = metrics.accuracy_score(y_test, pred)
 execution_time =  (time.time() - start_time)
 print("--- %s seconds ---" % execution_time)
-print("accuracy of the model: ", accuracy)
+print("accuracy of the RF model: ", accuracy_RF)
+
+
+clf = LogisticRegression()
+clf.fit(X_train, y_train)
+pred = clf.predict(X_test)
+accuracy_LR = metrics.accuracy_score(y_test, pred)
+print("accuracy of the LR model: ", accuracy_LR)
 
 # write scores to a file 
-with open("metricsc.txt", 'w') as outfile: 
+with open("metrics.txt", 'w') as outfile:
     outfile.write("execution_time: %2.2f \n" % execution_time)
-    outfile.write("accuracy: %2.2f%%" %accuracy)
+    outfile.write("accuracy: %2.2f%%" % accuracy_RF)
+
+# write scores to a file
+with open("metrics.txt", 'w') as outfile:
+    outfile.write("accuracy: %2.2f%%" % accuracy_LR)
 
