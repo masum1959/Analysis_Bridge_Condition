@@ -28,7 +28,8 @@ from sklearn import metrics
 
 
 # read the data
-data = pd.read_csv("AL21.txt")
+# data = pd.read_csv("AL21.txt")
+data = pd.read_csv("all_bridge.txt.dvc")
 
 # Visualization
 data['LOWEST_RATING'].value_counts().sort_values().plot(kind = 'barh')
